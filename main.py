@@ -1,7 +1,14 @@
+import sys
 from stats import get_num_words, get_character_count, dictionary_sorter
 
+if len(sys.argv) == 2:
+    book_path = sys.argv[1]
+else:
+    print("Usage: python3 main.py <path_to_book>")
+    sys.exit(1)
+
 def main():
-    book_path = "books/frankenstein.txt"
+#    book_path = "books/frankenstein.txt"
     text = get_book_text(book_path)
     num_words = get_num_words(text)
     print("============ BOOKBOT ============")
